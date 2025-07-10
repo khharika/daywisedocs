@@ -1,0 +1,1792 @@
+Index: src/person.java
+===================================================================
+diff --git a/src/person.java b/src/person.java
+deleted file mode 100644
+--- a/src/person.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ /dev/null	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
+@@ -1,3 +0,0 @@
+-public class person {
+-    public String name;
+-}
+\ No newline at end of file
+Index: src/exceptions/TaskFh8.java
+===================================================================
+diff --git a/src/exceptions/TaskFh8.java b/src/exceptions/TaskFh8.java
+deleted file mode 100644
+--- a/src/exceptions/TaskFh8.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ /dev/null	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
+@@ -1,12 +0,0 @@
+-package exceptions;
+-
+-import java.io.*;
+-class TaskFh8
+-{
+-    public static void main(String args[])
+-    {
+-        File f1 = new File(args[0]);
+-        File f2 = new File(args[1]);
+-        f1.renameTo(f2);
+-        System.out.println("Rename File " +f1+" To "+f2+" Sucessfully "); }
+-}
+Index: src/task17.java
+===================================================================
+diff --git a/src/task17.java b/src/task17.java
+deleted file mode 100644
+--- a/src/task17.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ /dev/null	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
+@@ -1,7 +0,0 @@
+-public class task17 {
+-    public static void main(String[] args) {
+-        person myObj = new person();
+-        myObj.name = "John";
+-        System.out.println(myObj.name);
+-    }
+-}
+Index: src/day8/Task33.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task33.java b/src/day8/Task33.java
+new file mode 100644
+--- /dev/null	(date 1751945900280)
++++ b/src/day8/Task33.java	(date 1751945900280)
+@@ -0,0 +1,31 @@
++package day8;
++class Customer{
++    int cost=40;
++    String items="Tomatoes";
++    Customer(){
++        System.out.println("Constructor called");
++    }
++    void purchage_list(){
++        System.out.println("Cost of "+items+" in Customer class is: "+cost);
++    }
++}
++public class Task33 extends Customer{
++    void billing(){
++        String items="Onions";
++        int cost=30;
++        super.items="Potatoes";
++        super.cost=50;
++        super.purchage_list();
++        System.out.println(items);
++        System.out.println(cost);
++        System.out.println("***************************");
++        System.out.println(super.items);
++        System.out.println(super.cost);
++    }
++    public static void main(String[] args){
++        Customer cobj=new Customer();
++        cobj.purchage_list();
++        Task33 tobj=new Task33();
++        tobj.billing();
++    }
++}
+Index: src/day8/Task32.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task32.java b/src/day8/Task32.java
+new file mode 100644
+--- /dev/null	(date 1751944507885)
++++ b/src/day8/Task32.java	(date 1751944507885)
+@@ -0,0 +1,45 @@
++package day8;
++// Calculation.java (Your existing Calculation class)
++class Calculation1 {
++    public void addition(int a, int b) {
++        System.out.println("Sum: " + (a + b));
++    }
++}
++// Clock.java (Your existing Clock class)
++class Clock {
++    public void showTime() {
++        System.out.println("Time: 12:00 PM");
++    }
++}
++// Task32.java (The corrected file)
++public class Task32 {
++
++    // 1. Declare instances of the classes you want to use
++    private Calculation calculator;
++    private Clock clock;
++
++    // 2. Initialize them in the constructor
++    public Task32() {
++        this.calculator = new Calculation();
++        this.clock = new Clock();
++    }
++    // 3. Define the multiply method (if it's unique to Task32)
++    public void multiply(int a, int b) {
++        System.out.println("Product: " + (a * b));
++    }
++
++    // 4. Create "wrapper" methods to delegate calls to the contained objects
++    public void addition(int a, int b) {
++        calculator.addition(a, b); // Delegate to the calculator object
++    }
++
++    public void showTime() {
++        clock.showTime(); // Delegate to the clock object
++    }
++    public static void main(String[] args) {
++        Task32 obj = new Task32();
++        obj.addition(10, 20);  // Now calls the delegated addition method
++        obj.multiply(10, 5);   // Calls Task32's own multiply method
++        obj.showTime();        // Now calls the delegated showTime method
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task34.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task34.java b/src/day8/Task34.java
+new file mode 100644
+--- /dev/null	(date 1751946289360)
++++ b/src/day8/Task34.java	(date 1751946289360)
+@@ -0,0 +1,16 @@
++package day8;
++public class Task34 {
++    void add(int x, int y) {
++        System.out.println("x: " + x + ", y: " + y);
++    }
++
++    void add(int x, int y, int z) {
++        System.out.println("x: " + x + ", y: " + y + ", z: " + z);
++    }
++
++    public static void main(String[] args) {
++        Task34 obj = new Task34();
++        obj.add(10, 20, 30);
++        obj.add(50, 100);
++    }
++}
+Index: src/day8/Task33_1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task33_1.java b/src/day8/Task33_1.java
+new file mode 100644
+--- /dev/null	(date 1751945661826)
++++ b/src/day8/Task33_1.java	(date 1751945661826)
+@@ -0,0 +1,22 @@
++package day8;
++class Superclass {
++    int var;
++    Superclass(int var) {
++        this.var = var;
++    }
++    public void getVar() {
++        System.out.println("var value in super class is " + var);
++    }
++}
++
++public class Task33_1 extends Superclass {
++    Task33_1(int var) {
++        super(var);
++    }
++    public static void main(String[] args) {
++        Superclass sobj = new Superclass(100);
++        sobj.getVar();
++        Task33_1 tobj = new Task33_1(200);
++        tobj.getVar();
++    }
++}
+Index: src/day8/Task35.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task35.java b/src/day8/Task35.java
+new file mode 100644
+--- /dev/null	(date 1751946813269)
++++ b/src/day8/Task35.java	(date 1751946813269)
+@@ -0,0 +1,17 @@
++package day8;
++
++public class Task35 {
++    void add(char x, char y) {
++        System.out.println("x: " + x + ", y: " + y);
++    }
++
++    void add(int x, int y) {
++        System.out.println("x: " + x + ", y: " + y);
++    }
++
++    public static void main(String[] args) {
++        Task35 obj = new Task35();
++        obj.add('d', 'a');
++        obj.add(100, 100);
++    }
++}
+Index: src/day8/Task37.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task37.java b/src/day8/Task37.java
+new file mode 100644
+--- /dev/null	(date 1751947915038)
++++ b/src/day8/Task37.java	(date 1751947915038)
+@@ -0,0 +1,46 @@
++package day8;
++class Employee1 {
++    private int pwd;
++    protected int salary;
++    public int empid;
++
++    Employee1(int pwd, int salary, int empid) {
++        this.pwd = pwd;
++        this.salary = salary;
++        this.empid = empid;
++    }
++
++    public int getPwd() {
++        return pwd;
++    }
++
++    public void setPwd(int pwd) {
++        this.pwd = pwd;
++    }
++}
++
++class Hr extends Employee1 {
++    Hr() {
++        super(1254, 50000, 10001);
++    }
++
++    public void displayDetails() {
++        System.out.println("Inside Hr class:");
++        System.out.println("Password: " + getPwd());
++        System.out.println("Salary: " + salary);
++        System.out.println("EmpID: " + empid);
++    }
++}
++
++public class Task37 {
++    public static void main(String[] args) {
++        Hr obj = new Hr();
++
++        System.out.println("Inside Task37 class:");
++        System.out.println("EmpID: " + obj.empid);
++        System.out.println("Salary: " + obj.salary);
++        System.out.println("Password: " + obj.getPwd());
++
++        obj.displayDetails();
++    }
++}
+Index: src/day8/Task36.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task36.java b/src/day8/Task36.java
+new file mode 100644
+--- /dev/null	(date 1751946963745)
++++ b/src/day8/Task36.java	(date 1751946963745)
+@@ -0,0 +1,17 @@
++package day8;
++
++public class Task36 {
++    void add(int x, float y) {
++        System.out.println("x: " + x + ", y: " + y);
++    }
++
++    void add(float x, int y) {
++        System.out.println("x: " + x + ", y: " + y);
++    }
++
++    public static void main(String[] args) {
++        Task36 obj = new Task36();
++        obj.add(10.50f, 60);    // float, int
++        obj.add(100, 80.80f);   // int, float
++    }
++}
+Index: src/day8/Task40.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task40.java b/src/day8/Task40.java
+new file mode 100644
+--- /dev/null	(date 1751971964303)
++++ b/src/day8/Task40.java	(date 1751971964303)
+@@ -0,0 +1,61 @@
++abstract class Gadgets {
++    abstract void turnOn();
++    abstract void turnOff();
++}
++class TVRemote extends Gadgets {
++    @Override
++    void turnOn() {
++        System.out.println("TV is turned ON.");
++    }
++
++    @Override
++    void turnOff() {
++        System.out.println("TV is turned OFF.");
++    }
++}
++class ACRemote extends Gadgets {
++    @Override
++    void turnOn() {
++        System.out.println("AC is turned ON.");
++    }
++    @Override
++    void turnOff() {
++        System.out.println("AC is turned OFF.");
++    }
++}
++class FanRemote extends Gadgets {
++    @Override
++    void turnOn() {
++        System.out.println("Fan is turned ON.");
++    }
++    @Override
++    void turnOff() {
++        System.out.println("Fan is turned OFF.");
++    }
++}
++class CoolerRemote extends Gadgets {
++    @Override
++    void turnOn() {
++        System.out.println("Cooler is turned ON.");
++    }
++    @Override
++    void turnOff() {
++        System.out.println("Cooler is turned OFF.");
++    }
++}
++public class Task40 {
++    public static void main(String[] args) {
++        Gadgets tv = new TVRemote();
++        Gadgets ac = new ACRemote();
++        Gadgets fan = new FanRemote();
++        Gadgets cooler = new CoolerRemote();
++        tv.turnOn();
++        tv.turnOff();
++        ac.turnOn();
++        ac.turnOff();
++        fan.turnOn();
++        fan.turnOff();
++        cooler.turnOn();
++        cooler.turnOff();
++    }
++}
+Index: src/day8/Task38.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task38.java b/src/day8/Task38.java
+new file mode 100644
+--- /dev/null	(date 1751947455844)
++++ b/src/day8/Task38.java	(date 1751947455844)
+@@ -0,0 +1,66 @@
++package day8;
++abstract class Employee {
++    private String name;
++    private String address;
++    private int number;
++
++    public Employee(String name, String address, int number) {
++        System.out.println("Constructing an Employee");
++        this.name = name;
++        this.address = address;
++        this.number = number;
++    }
++
++    public double computePay() {
++        System.out.println("Inside Employee computePay");
++        return 0.0;
++    }
++
++    public void mailCheck() {
++        System.out.println("Mailing a check to " + this.name + ", " + this.address);
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public String getAddress() {
++        return address;
++    }
++
++    public void setAddress(String newAddress) {
++        address = newAddress;
++    }
++
++    public int getNumber() {
++        return number;
++    }
++
++    public String toString() {
++        return name + " " + address + " " + number;
++    }
++}
++
++class SalaryEmployee extends Employee {
++    public SalaryEmployee(String name, String address, int number) {
++        super(name, address, number);
++    }
++
++    @Override
++    public double computePay() {
++        System.out.println("Inside SalaryEmployee computePay");
++        return 50000.0;
++    }
++}
++
++public class Task38 {
++    public static void main(String[] args) {
++        Employee e = new SalaryEmployee("George W.", "Houston, TX", 43);
++
++        System.out.println("\nCall mailCheck using Employee reference:");
++        e.mailCheck();
++
++        System.out.println("\nCall computePay:");
++        System.out.println("Pay: $" + e.computePay());
++    }
++}
+Index: src/day8/Task41.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task41.java b/src/day8/Task41.java
+new file mode 100644
+--- /dev/null	(date 1751972417682)
++++ b/src/day8/Task41.java	(date 1751972417682)
+@@ -0,0 +1,26 @@
++package day8;
++// Interface Declared
++interface testInterface {
++    // public, static and final
++    final int tax = 10;
++
++    // public and abstract
++    void display();
++}
++
++// Class implementing interface
++class TestClass implements testInterface {
++    public void display() {
++        System.out.println("Myclass");
++    }
++}
++// Driver Code Starts
++public class Task41 {
++    public static void main(String[] args) {
++        TestClass t = new TestClass();
++        t.display();
++
++        // Accessing interface constant
++        System.out.println(testInterface.tax);
++    }
++}
+Index: src/Day7/Task17.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task17.java b/src/Day7/Task17.java
+new file mode 100644
+--- /dev/null	(date 1751973380697)
++++ b/src/Day7/Task17.java	(date 1751973380697)
+@@ -0,0 +1,13 @@
++package Day7;
++public class Task17 {
++    public static void main(String[] args) {
++        Person myObj = new Person();
++
++        // Set name using setter
++        myObj.setName("John");
++
++        // Get name using getter
++        System.out.println(myObj.getName());
++    }
++}
++
+Index: src/Day7/Task18.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task18.java b/src/Day7/Task18.java
+new file mode 100644
+--- /dev/null	(date 1751973380780)
++++ b/src/Day7/Task18.java	(date 1751973380780)
+@@ -0,0 +1,10 @@
++package Day7;
++
++public class Task18 {
++    public static void main(String[] args) {
++        Person myObj = new Person();
++        myObj.setName("John");
++        System.out.println(myObj.getName());
++    }
++}
++
+Index: src/Day7/Task16_1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task16_1.java b/src/Day7/Task16_1.java
+new file mode 100644
+--- /dev/null	(date 1751973380600)
++++ b/src/Day7/Task16_1.java	(date 1751973380600)
+@@ -0,0 +1,47 @@
++package Day7;
++import java.util.HashMap;
++import java.util.Map;
++
++public class Task16_1 {
++
++    public enum Element {
++        H("Hydrogen", 1, 1.008f),
++        HE("Helium", 2, 4.0026f),
++        NE("Neon", 10, 20.180f);
++
++        private static final Map<String, Element> BY_LABEL = new HashMap<>();
++        private static final Map<Integer, Element> BY_ATOMIC_NUMBER = new HashMap<>();
++        private static final Map<Float, Element> BY_ATOMIC_WEIGHT = new HashMap<>();
++
++        static {
++            for (Element e : values()) {
++                BY_LABEL.put(e.label, e);
++                BY_ATOMIC_NUMBER.put(e.atomicNumber, e);
++                BY_ATOMIC_WEIGHT.put(e.atomicWeight, e);
++            }
++        }
++
++        public final String label;
++        public final int atomicNumber;
++        public final float atomicWeight;
++
++        Element(String label, int atomicNumber, float atomicWeight) {
++            this.label = label;
++            this.atomicNumber = atomicNumber;
++            this.atomicWeight = atomicWeight;
++        }
++
++        public static Element valueOfLabel(String label) {
++            return BY_LABEL.get(label);
++        }
++
++        public static Element valueOfAtomicNumber(int number) {
++            return BY_ATOMIC_NUMBER.get(number);
++        }
++
++        public static Element valueOfAtomicWeight(float weight) {
++            return BY_ATOMIC_WEIGHT.get(weight);
++        }
++    }
++}
++
+Index: src/Day7/Task20.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task20.java b/src/Day7/Task20.java
+new file mode 100644
+--- /dev/null	(date 1751973380612)
++++ b/src/Day7/Task20.java	(date 1751973380612)
+@@ -0,0 +1,20 @@
++package Day7;
++public class Task20 {
++    public static void main(String[] args) {
++        // Declare and initialize the array with your name
++        char[] Name = { 'H', 'A', 'R', 'I', 'K', 'A' };
++
++        // Print the array as a string
++        System.out.println(Name);  // This automatically prints the full name
++
++        // Get the length of the name
++        int n = Name.length;
++        System.out.println("There are " + n + " letters in my name");
++
++        // Print each character using a loop
++        System.out.print("Letters in my name: ");
++        for (int i = 0; i < n; i++) {
++            System.out.print(Name[i] + " ");
++        }
++    }
++}
+Index: src/Day15/TaskTN1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day15/TaskTN1.java b/src/Day15/TaskTN1.java
+new file mode 100644
+--- /dev/null	(date 1751965704742)
++++ b/src/Day15/TaskTN1.java	(date 1751965704742)
+@@ -0,0 +1,22 @@
++package Day15;
++
++public class TaskTN1 {
++    int data;
++    TaskTN1 left;
++    TaskTN1 right;
++
++    // Constructor
++    TaskTN1(int data) {
++        this.data = data;
++        this.left = null;
++        this.right = null;
++    }
++    public static void main(String[] args) {
++        TaskTN1 root = new TaskTN1(10);
++        root.left = new TaskTN1(5);
++        root.right = new TaskTN1(15);
++        System.out.println("Root: " + root.data);
++        System.out.println("Left Child: " + root.left.data);
++        System.out.println("Right Child: " + root.right.data);
++    }
++}
+Index: src/Day15/TaskTN2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day15/TaskTN2.java b/src/Day15/TaskTN2.java
+new file mode 100644
+--- /dev/null	(date 1751966197574)
++++ b/src/Day15/TaskTN2.java	(date 1751966197574)
+@@ -0,0 +1,50 @@
++package Day15;
++public class TaskTN2 {
++    static class Node {
++        int data;
++        Node left, right;
++
++        Node(int data) {
++            this.data = data;
++            left = right = null;
++        }
++    }
++    static class BinarySearchTree {
++        Node root;
++        public void insert(int value) {
++            if (root == null) {
++                root = new Node(value);
++                System.out.println(value + " inserted as root");
++            } else {
++                insert(root, value); // call overloaded insert
++            }
++        }
++        private void insert(Node current, int value) {
++            if (value < current.data) {
++                if (current.left == null) {
++                    current.left = new Node(value);
++                    System.out.println(value + " inserted to left of " + current.data);
++                } else {
++                    insert(current.left, value);
++                }
++            } else {
++                if (current.right == null) {
++                    current.right = new Node(value);
++                    System.out.println(value + " inserted to right of " + current.data);
++                } else {
++                    insert(current.right, value);
++                }
++            }
++        }
++    }
++    public static void main(String[] args) {
++        BinarySearchTree tree = new BinarySearchTree();
++        tree.insert(50); // Empty tree insert
++        tree.insert(30); // Non-empty insert
++        tree.insert(70);
++        tree.insert(20);
++        tree.insert(40);
++        tree.insert(60);
++        tree.insert(80);
++    }
++}
+Index: src/Day15/TaskTN3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day15/TaskTN3.java b/src/Day15/TaskTN3.java
+new file mode 100644
+--- /dev/null	(date 1751966577826)
++++ b/src/Day15/TaskTN3.java	(date 1751966577826)
+@@ -0,0 +1,64 @@
++package Day15;
++public class TaskTN3 {
++    static class Node {
++        int data;
++        Node left, right;
++        Node(int data) {
++            this.data = data;
++            left = right = null;
++        }
++    }
++    static class BinarySearchTree {
++        Node root;
++        public void insert(int value) {
++            if (root == null) {
++                root = new Node(value);
++                System.out.println(value + " inserted as root");
++            } else {
++                insert(root, value);
++            }
++        }
++        private void insert(Node current, int value) {
++            if (value < current.data) {
++                if (current.left == null) {
++                    current.left = new Node(value);
++                    System.out.println(value + " inserted to left of " + current.data);
++                } else {
++                    insert(current.left, value);
++                }
++            } else {
++                if (current.right == null) {
++                    current.right = new Node(value);
++                    System.out.println(value + " inserted to right of " + current.data);
++                } else {
++                    insert(current.right, value);
++                }
++            }
++        }
++
++        // Preorder traversal
++        public void preorderTraversal() {
++            System.out.print("Preorder traversal: ");
++            preorder(root);
++            System.out.println();
++        }
++        private void preorder(Node node) {
++            if (node != null) {
++                System.out.print(node.data + " ");
++                preorder(node.left);
++                preorder(node.right);
++            }
++        }
++    }
++    public static void main(String[] args) {
++        BinarySearchTree tree = new BinarySearchTree();
++        tree.insert(50);
++        tree.insert(30);
++        tree.insert(70);
++        tree.insert(20);
++        tree.insert(40);
++        tree.insert(60);
++        tree.insert(80);
++        tree.preorderTraversal();
++    }
++}
+Index: src/Day15/TaskTN6.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day15/TaskTN6.java b/src/Day15/TaskTN6.java
+new file mode 100644
+--- /dev/null	(date 1751967523722)
++++ b/src/Day15/TaskTN6.java	(date 1751967523722)
+@@ -0,0 +1,53 @@
++package Day15;
++public class TaskTN6 {
++    static class Node {
++        int data;
++        Node left, right;
++        Node(int data) {
++            this.data = data;
++            this.left = null;
++            this.right = null;
++        }
++    }
++    static class BinarySearchTree {
++        Node root;
++        public void insert(int value) {
++            root = insertRecursive(root, value);
++        }
++        private Node insertRecursive(Node node, int value) {
++            if (node == null) {
++                return new Node(value);
++            }
++            if (value < node.data) {
++                node.left = insertRecursive(node.left, value);
++            } else if (value > node.data) {
++                node.right = insertRecursive(node.right, value);
++            }
++            return node;
++        }
++        public boolean search(int value) {
++            return searchRecursive(root, value);
++        }
++        private boolean searchRecursive(Node node, int value) {
++            if (node == null) return false;
++            if (node.data == value) return true;
++            if (value < node.data) return searchRecursive(node.left, value);
++            else return searchRecursive(node.right, value);
++        }
++    }
++    public static void main(String[] args) {
++        BinarySearchTree tree = new BinarySearchTree();
++        tree.insert(50);
++        tree.insert(30);
++        tree.insert(70);
++        tree.insert(20);
++        tree.insert(40);
++        tree.insert(60);
++        tree.insert(80);
++        int value1 = 40;
++        int value2 = 100;
++        System.out.println("Search " + value1 + ": " + (tree.search(value1) ? "Found" : "Not Found"));
++        System.out.println("Search " + value2 + ": " + (tree.search(value2) ? "Found" : "Not Found"));
++    }
++}
++
+Index: src/Day15/TaskTN10.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day15/TaskTN10.java b/src/Day15/TaskTN10.java
+new file mode 100644
+--- /dev/null	(date 1751968895048)
++++ b/src/Day15/TaskTN10.java	(date 1751968895048)
+@@ -0,0 +1,58 @@
++package Day15;
++public class TaskTN10 {
++
++    // Outer Graph class
++    static class Graph {
++        int vertex;
++        int edge;
++
++        // Inner Edge class
++        static class Edge {
++            int start;
++            int end;
++
++            Edge(int start, int end) {
++                this.start = start;
++                this.end = end;
++            }
++        }
++
++        // Constructor
++        Graph(int vertex, int edge) {
++            this.vertex = vertex;
++            this.edge = edge;
++        }
++
++        // Method to display edges
++        public void displayEdges(Edge[] edges) {
++            System.out.println("Number of vertices: " + vertex);
++            System.out.println("Number of edges: " + edge);
++            System.out.println("Graph edges:");
++            for (int i = 0; i < edge; i++) {
++                System.out.println(edges[i].start + " - " + edges[i].end);
++            }
++        }
++    }
++
++    // Main method
++    public static void main(String[] args) {
++        int v = 5;
++        int e = 8;
++
++        Graph.Edge[] edges = new Graph.Edge[e];
++
++        // Add edges
++        edges[0] = new Graph.Edge(1, 2);
++        edges[1] = new Graph.Edge(1, 3);
++        edges[2] = new Graph.Edge(1, 4);
++        edges[3] = new Graph.Edge(2, 4);
++        edges[4] = new Graph.Edge(2, 5);
++        edges[5] = new Graph.Edge(3, 4);
++        edges[6] = new Graph.Edge(3, 5);
++        edges[7] = new Graph.Edge(4, 5); // newly added 8th edge
++
++        // Create graph and display edges
++        Graph g = new Graph(v, e);
++        g.displayEdges(edges);
++    }
++}
+Index: src/day14/STask6.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day14/STask6.java b/src/day14/STask6.java
+new file mode 100644
+--- /dev/null	(date 1751634735684)
++++ b/src/day14/STask6.java	(date 1751634735684)
+@@ -0,0 +1,30 @@
++package day14;
++
++import java.util.Stack;
++
++public class STask6 {
++    public static void main(String[] args) {
++
++        Stack<String> names = new Stack<>();
++
++
++        names.push("a");
++        names.push("B");
++        names.push("C");
++        names.push("D");
++
++        System.out.println("Stack: " + names);
++
++
++        String searchName = "E";
++        int position = names.search(searchName);
++
++        // Display the position (1-based from top of stack)
++        if (position == -1) {
++            System.out.println(searchName + " not found in the stack.");
++        } else {
++            System.out.println(searchName + " found at position (from top): " + position);
++        }
++    }
++}
++
+Index: src/day14/STask7.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day14/STask7.java b/src/day14/STask7.java
+new file mode 100644
+--- /dev/null	(date 1751615608171)
++++ b/src/day14/STask7.java	(date 1751615608171)
+@@ -0,0 +1,20 @@
++package day14;
++import java.util.Stack;
++public class STask7 {
++    public static void main(String[] args) {
++        Stack<Integer> numbers = new Stack<>();
++        numbers.push(10);
++        numbers.push(20);
++        numbers.push(30);
++        System.out.println("Stack after pushing elements: " + numbers);
++        int poppedElement = numbers.pop();
++        System.out.println("Popped element: " + poppedElement);
++        System.out.println("Stack after popping: " + numbers);
++        if (numbers.isEmpty()) {
++            System.out.println("Stack is empty.");
++        } else {
++            System.out.println("Stack is not empty.");
++        }
++    }
++}
++
+Index: src/day14/Stask5.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day14/Stask5.java b/src/day14/Stask5.java
+new file mode 100644
+--- /dev/null	(date 1751633451261)
++++ b/src/day14/Stask5.java	(date 1751633451261)
+@@ -0,0 +1,32 @@
++package day14;
++
++import java.util.Stack;
++
++public class Stask5 {
++    public static void main(String[] args) {
++        // Create a Stack of integers
++        Stack<Integer> stack = new Stack<>();
++
++        // Push elements into the stack
++        stack.push(10);
++        stack.push(20);
++        stack.push(30);
++        stack.push(40);
++
++        // Display the stack
++        System.out.println("Stack after pushing elements: " + stack);
++
++        // Pop and print elements from the stack
++        System.out.println("Popping elements from the stack:");
++
++        int poppedElement1 = stack.pop();
++        System.out.println("Popped element: " + poppedElement1);
++
++        int poppedElement2 = stack.pop();
++        System.out.println("Popped element: " + poppedElement2);
++
++        // Display the remaining stack
++        System.out.println("Stack after popping elements: " + stack);
++    }
++}
++
+Index: src/day14/QTask10.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day14/QTask10.java b/src/day14/QTask10.java
+new file mode 100644
+--- /dev/null	(date 1751622168868)
++++ b/src/day14/QTask10.java	(date 1751622168868)
+@@ -0,0 +1,55 @@
++package day14;
++public class QTask10 {
++    static class MyQueue {
++        int[] q;
++        int front = 0, rear = -1, size;
++        MyQueue(int size) {
++            this.size = size;
++            q = new int[size];
++        }
++        boolean isEmpty() {
++            return front > rear;
++        }
++        boolean isFull() {
++            return rear == size - 1;
++        }
++        void enqueue(int data) {
++            if (isFull()) System.out.println("Queue full");
++            else q[++rear] = data;
++        }
++        void dequeue() {
++            if (isEmpty()) System.out.println("Queue empty");
++            else System.out.println("Dequeued: " + q[front++]);
++        }
++        void peek() {
++            if (isEmpty()) System.out.println("Queue empty");
++            else System.out.println("Front: " + q[front]);
++        }
++        void display() {
++            if (isEmpty()) System.out.println("Queue empty");
++            else {
++                System.out.print("Queue: ");
++                for (int i = front; i <= rear; i++)
++                    System.out.print(q[i] + " ");
++                System.out.println();
++            }
++        }
++    }
++    public static void main(String[] args) {
++        MyQueue q = new MyQueue(5);
++        q.enqueue(10);
++        q.enqueue(20);
++        q.enqueue(30);
++        q.display();
++        q.peek();
++        q.dequeue();
++        q.display();
++        System.out.println("Empty? " + q.isEmpty());
++        System.out.println("Full? " + q.isFull());
++        q.enqueue(40);
++        q.enqueue(50);
++        q.enqueue(60);
++        q.enqueue(70);
++        q.display();
++    }
++}
+Index: src/day14/STask8.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day14/STask8.java b/src/day14/STask8.java
+new file mode 100644
+--- /dev/null	(date 1751615344048)
++++ b/src/day14/STask8.java	(date 1751615344048)
+@@ -0,0 +1,14 @@
++package day14;
++import java.util.Stack;
++class Ds_Stack_SearchPosition {
++    public static void main(String[] args) {
++        Stack<String> names = new Stack<>();
++        names.push("A");
++        names.push("B");
++        names.push("C");
++        System.out.println("Stack of names: " + names);
++        String Val = "B";
++        int position = names.search(Val);
++        System.out.println("The searched value is at position " + position);
++    }
++}
+Index: src/day9/Task4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day9/Task4.java b/src/day9/Task4.java
+new file mode 100644
+--- /dev/null	(date 1751980539893)
++++ b/src/day9/Task4.java	(date 1751980539893)
+@@ -0,0 +1,13 @@
++package day9;
++public class Task4 {
++    public static void main(String[] args) {
++        try {
++            int[] myNumbers = {1, 2, 3};
++            System.out.println(myNumbers[1]); // Accessing index 1 (value = 2)
++        } catch (Exception e) {
++            System.out.println("Something went wrong.");
++        } finally {
++            System.out.println("I'm from finally block.");
++        }
++    }
++}
+Index: src/day9/Task5.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day9/Task5.java b/src/day9/Task5.java
+new file mode 100644
+--- /dev/null	(date 1751980715096)
++++ b/src/day9/Task5.java	(date 1751980715096)
+@@ -0,0 +1,18 @@
++package day9;
++public class Task5 {
++    public static void main(String args[]) {
++        try {
++            int a[] = new int[2];
++            int b = 10; // changed from 0 to 10
++            int c = 1 / b;
++            System.out.println("Access element three :" + a[3]); // this will cause exception
++        }
++        catch (ArrayIndexOutOfBoundsException e) {
++            System.out.println("ArrayIndexOutOfBoundsException thrown  :" + e);
++        }
++        catch (Exception e) {
++            System.out.println("Exception thrown  :" + e.getMessage());
++        }
++        System.out.println("Out of the block");
++    }
++}
+Index: src/day9/Task8.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day9/Task8.java b/src/day9/Task8.java
+new file mode 100644
+--- /dev/null	(date 1751981089099)
++++ b/src/day9/Task8.java	(date 1751981089099)
+@@ -0,0 +1,25 @@
++package day9;
++import java.util.Scanner;
++class MyException extends Exception {
++    public MyException(String message) {
++        super(message); // calling the parent Exception constructor
++    }
++}
++public class Task8 {
++    public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++        System.out.print("Enter your age: ");
++        int age = sc.nextInt();
++        try {
++            if (age < 0) {
++                // Throw custom exception if age is negative
++                throw new MyException("Age cannot be negative!");
++            } else {
++                System.out.println("Valid age: " + age);
++            }
++        } catch (MyException ex) {
++            System.out.println("Caught");
++            System.out.println(ex.getMessage());
++        }
++    }
++}
+Index: src/day10/TaskMT3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/TaskMT3.java b/src/day10/TaskMT3.java
+new file mode 100644
+--- /dev/null	(date 1752118301611)
++++ b/src/day10/TaskMT3.java	(date 1752118301611)
+@@ -0,0 +1,43 @@
++package day10;
++class ThreadDemo extends Thread {
++    private Thread t;
++    private String threadName;
++
++    ThreadDemo(String name) {
++        this.threadName = name;
++        System.out.println("Creating " + this.threadName);
++    }
++
++    public void run() {
++        System.out.println("Running " + this.threadName);
++
++        try {
++            for (int i = 4; i > 0; --i) {
++                System.out.println("Thread: " + this.threadName + ", " + i);
++                Thread.sleep(50); // sleep for 50 milliseconds
++            }
++        } catch (InterruptedException e) {
++            System.out.println("Thread " + this.threadName + " interrupted.");
++        }
++
++        System.out.println("Thread " + this.threadName + " exiting.");
++    }
++
++    public void start() {
++        System.out.println("Starting " + this.threadName);
++        if (this.t == null) {
++            this.t = new Thread(this, this.threadName);
++            this.t.start();
++        }
++    }
++}
++
++public class TaskMT3 {
++    public static void main(String[] args) {
++        ThreadDemo t1 = new ThreadDemo("Thread-1");
++        t1.start();
++
++        ThreadDemo t2 = new ThreadDemo("Thread-2");
++        t2.start();
++    }
++}
+Index: src/day10/TaskMT4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/TaskMT4.java b/src/day10/TaskMT4.java
+new file mode 100644
+--- /dev/null	(date 1752118461354)
++++ b/src/day10/TaskMT4.java	(date 1752118461354)
+@@ -0,0 +1,4 @@
++package day10;
++
++public class TaskMT4 {
++}
+Index: src/day10/TaskMT18.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/TaskMT18.java b/src/day10/TaskMT18.java
+new file mode 100644
+--- /dev/null	(date 1752120192496)
++++ b/src/day10/TaskMT18.java	(date 1752120192496)
+@@ -0,0 +1,15 @@
++package day10;
++public class    TaskMT18 extends Thread {
++    public void run() {
++
++        System.out.println("thread started.");
++
++    }
++
++    public static void main(String args[]) {
++        TaskMT18 th1 = new TaskMT18();
++        th1.start();
++    }
++}
++
++
+Index: src/day10/TaskMT19.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/TaskMT19.java b/src/day10/TaskMT19.java
+new file mode 100644
+--- /dev/null	(date 1752120673184)
++++ b/src/day10/TaskMT19.java	(date 1752120673184)
+@@ -0,0 +1,26 @@
++package day10;
++class MyRunnable implements Runnable {
++    @Override
++    public void run() {
++        System.out.println("Code executed in a new thread via Runnable.");
++    }
++}
++
++class MyThread extends Thread {
++    @Override
++    public void run() {
++        System.out.println("Code executed in a new thread via Thread extension.");
++    }
++}
++
++public class TaskMT19 {
++    public static void main(String[] args) {
++        MyRunnable runnableInstance = new MyRunnable();
++        MyThread threadInstance = new MyThread();
++
++        Thread t1 = new Thread(runnableInstance); // Thread from Runnable
++
++        t1.start();             // starts the Runnable thread
++        threadInstance.start(); // starts the extended Thread
++    }
++}
+Index: src/day10/TaskMT20.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day10/TaskMT20.java b/src/day10/TaskMT20.java
+new file mode 100644
+--- /dev/null	(date 1752120659430)
++++ b/src/day10/TaskMT20.java	(date 1752120659430)
+@@ -0,0 +1,26 @@
++package day10;
++public class TaskMT20 {
++
++    public static void main(String[] args) {
++        method1();
++    }
++
++    public static void method1() {
++        method2();
++    }
++
++    public static void method2() {
++        method3();
++    }
++
++    public static void method3() {
++        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
++
++        System.out.println("Thread Stack Trace:");
++        for (StackTraceElement element : stackTrace) {
++            System.out.println("  Class: " + element.getClassName() +
++                    ", Method: " + element.getMethodName() +
++                    ", Line: " + element.getLineNumber());
++        }
++    }
++}
+Index: src/Day7/Task16.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task16.java b/src/Day7/Task16.java
+new file mode 100644
+--- /dev/null	(date 1751769543563)
++++ b/src/Day7/Task16.java	(date 1751769543563)
+@@ -0,0 +1,22 @@
++package Enumerations;
++import java.util.Enumeration;
++import java.util.Vector;
++enum Color {
++    RED, GREEN, BLUE;
++}
++public class Task16 {
++    public static void main(String[] args) {
++        // Using enum
++        Color c1 = Color.GREEN;
++        System.out.println("Enum value: " + c1);
++        Vector<String> colors = new Vector<>();
++        colors.add("Red");
++        colors.add("Green");
++        colors.add("Blue");
++        Enumeration<String> e = colors.elements();
++        System.out.println("Vector elements using Enumeration:");
++        while (e.hasMoreElements()) {
++            System.out.println(e.nextElement());
++        }
++    }
++}
+Index: src/Day7/Person.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Person.java b/src/Day7/Person.java
+new file mode 100644
+--- /dev/null	(date 1751973380553)
++++ b/src/Day7/Person.java	(date 1751973380553)
+@@ -0,0 +1,17 @@
++package Day7;
++public class Person {
++    private String name;
++
++    // Setter
++    public void setName(String newName) {
++        this.name = newName;
++    }
++
++    // Getter
++    public String getName() {
++        return name;
++    }
++}
++
++
++
+Index: src/Day7/Task19.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Day7/Task19.java b/src/Day7/Task19.java
+new file mode 100644
+--- /dev/null	(date 1751973380646)
++++ b/src/Day7/Task19.java	(date 1751973380646)
+@@ -0,0 +1,18 @@
++import Day7.Task16_1;
++
++public class Task19 {
++    public static void main(String[] args) {
++        System.out.println("Displaying all elements from Element enum:");
++
++        for (Task16_1.Element element : Task16_1.Element.values()) {
++            System.out.println("Symbol: " + element.name()
++                    + ", Label: " + element.label
++                    + ", Atomic Number: " + element.atomicNumber
++                    + ", Atomic Weight: " + element.atomicWeight);
++        }
++
++        System.out.println("\nSearch by Label: " + Task16_1.Element.valueOfLabel("Helium"));
++        System.out.println("Search by Atomic Number (2): " + Task16_1.Element.valueOfAtomicNumber(2));
++        System.out.println("Search by Atomic Weight (4.0026f): " + Task16_1.Element.valueOfAtomicWeight(4.0026f));
++    }
++}
+Index: src/day8/Task21.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task21.java b/src/day8/Task21.java
+new file mode 100644
+--- /dev/null	(date 1751885416899)
++++ b/src/day8/Task21.java	(date 1751885416899)
+@@ -0,0 +1,14 @@
++public class Task21 {
++    public static void main(String[] args) {
++        // initializing array
++        int[] arr = {1, 2, 3, 4, 5};
++
++        // size of array
++        int n = arr.length;
++
++        // traversing array
++        for (int i = 0; i < n; i++) {
++            System.out.print(arr[i] + " ");
++        }
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task22.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task22.java b/src/day8/Task22.java
+new file mode 100644
+--- /dev/null	(date 1751886353567)
++++ b/src/day8/Task22.java	(date 1751886353567)
+@@ -0,0 +1,27 @@
++package day8;
++public class Task22 {
++    public static void main(String[] args) {
++        // declares an Array of integers.
++        int[] arr;
++
++        // allocating memory for 5 integers.
++        arr = new int[5];
++
++        // initialize the elements of the array
++        // first to last(fifth) element
++        arr[0] = 10;
++        arr[1] = 20;
++        arr[2] = 30;
++        arr[3] = 40;
++        // arr[4] is implicitly initialized to 0 if not assigned explicitly.
++        // The example output only shows up to index 3, so we'll match that.
++
++        // Print the elements of the array to demonstrate
++        System.out.println("Element at index 0 : " + arr[0]);
++        System.out.println("Element at index 1 : " + arr[1]);
++        System.out.println("Element at index 2 : " + arr[2]);
++        System.out.println("Element at index 3 : " + arr[3]);
++        // If you want to print arr[4], uncomment the line below:
++        // System.out.println("Element at index 4 : " + arr[4]);
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task23.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task23.java b/src/day8/Task23.java
+new file mode 100644
+--- /dev/null	(date 1751887503121)
++++ b/src/day8/Task23.java	(date 1751887503121)
+@@ -0,0 +1,25 @@
++package day8;
++class Student {
++    public int roll_no;
++    public String Name;
++
++    public Student(int Roll_No, String Name) {
++        this.roll_no = Roll_No;
++        this.Name = Name;
++    }
++}
++public class Task23 {
++    public static void main(String[] args) {
++
++        Student[] arr = new Student[5];
++        arr[0] = new Student(1, "aman");
++        arr[1] = new Student(2, "vaibhav");
++        arr[2] = new Student(3, "shikar");
++        arr[3] = new Student(4, "dharmesh");
++        arr[4] = new Student(5, "mohit");
++        for (int i = 0; i < arr.length; i++) {
++            System.out.println("Element at " + i + " : "
++                    + arr[i].roll_no + " " + arr[i].Name);
++        }
++    }
++}
+Index: src/day8/Task24.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task24.java b/src/day8/Task24.java
+new file mode 100644
+--- /dev/null	(date 1751887838943)
++++ b/src/day8/Task24.java	(date 1751887838943)
+@@ -0,0 +1,30 @@
++package day8;
++
++class Student1 {
++    public String name;
++
++    Student1(String name) {
++        this.name = name;
++    }
++
++    @Override
++    public String toString() {
++        return name;
++    }
++}
++
++public class Task24 {
++    public static void main(String[] args) {
++        Student1[] myStudents = new Student1[5];
++
++        myStudents[0] = new Student1("sanvi");
++        myStudents[1] = new Student1("Dharma");
++        myStudents[2] = new Student1("sanvi");
++        myStudents[3] = new Student1("Rupa");
++        myStudents[4] = new Student1("Ajay");
++
++        for (int i = 0; i < myStudents.length; i++) {
++            System.out.println(myStudents[i]);
++        }
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task25.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task25.java b/src/day8/Task25.java
+new file mode 100644
+--- /dev/null	(date 1751888428874)
++++ b/src/day8/Task25.java	(date 1751888428874)
+@@ -0,0 +1,9 @@
++package day8;
++
++class Task025 {
++    public static void main(String[] args) {
++        int[][] arr = new int[3][3];
++        System.out.println("Rows : " + arr.length);
++        System.out.println("Columns : " + arr[0].length);
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task26.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task26.java b/src/day8/Task26.java
+new file mode 100644
+--- /dev/null	(date 1751889213407)
++++ b/src/day8/Task26.java	(date 1751889213407)
+@@ -0,0 +1,13 @@
++
++public class Task26 {
++    public static void main(String[] args) {
++        int arr[][] = {{2, 7, 9}, {3, 6, 1}, {7, 4, 2}};
++
++        for (int i = 0; i < arr.length; i++) {
++            for (int j = 0; j < arr[i].length; j++) {
++                System.out.print(arr[i][j] + " ");
++            }
++            System.out.println();
++        }
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task27.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task27.java b/src/day8/Task27.java
+new file mode 100644
+--- /dev/null	(date 1751889396311)
++++ b/src/day8/Task27.java	(date 1751889396311)
+@@ -0,0 +1,14 @@
++public class Task27 {
++    public static void main(String[] args) {
++        int arr[] = {3, 1, 2, 4, 6};
++        sum(arr);
++    }
++
++    public static void sum(int[] arr) {
++        int sum = 0;
++        for (int i = 0; i < arr.length; i++) {
++            sum += arr[i];
++        }
++        System.out.println("Sum of array values : " + sum);
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task28.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task28.java b/src/day8/Task28.java
+new file mode 100644
+--- /dev/null	(date 1751889643725)
++++ b/src/day8/Task28.java	(date 1751889643725)
+@@ -0,0 +1,13 @@
++package day8;
++class Task28 {
++    public static void main(String args[]) {
++        int arr[] = m1();
++        for (int i = 0; i < arr.length; i++) {
++            System.out.print(arr[i] + " ");
++        }
++    }
++
++    public static int[] m1() {
++        return new int[]{1, 2, 3};
++    }
++}
+Index: src/day8/Task29.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task29.java b/src/day8/Task29.java
+new file mode 100644
+--- /dev/null	(date 1751889891183)
++++ b/src/day8/Task29.java	(date 1751889891183)
+@@ -0,0 +1,14 @@
++package day8;
++
++class Task29 {
++    public static void main(String args[]) {
++        int intArray[] = {1, 2, 3};
++        int cloneArray[] = intArray.clone();
++
++        System.out.println(intArray == cloneArray);
++
++        for (int i = 0; i < cloneArray.length; i++) {
++            System.out.print(cloneArray[i] + " ");
++        }
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task30.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task30.java b/src/day8/Task30.java
+new file mode 100644
+--- /dev/null	(date 1751890057322)
++++ b/src/day8/Task30.java	(date 1751890057322)
+@@ -0,0 +1,12 @@
++package day8;
++class Task30 {
++    public static void main(String args[]) {
++        int intArray[][] = {{1, 2, 3}, {4, 5}};
++        int cloneArray[][] = intArray.clone();
++
++        System.out.println(intArray == cloneArray);
++
++        System.out.println(intArray[0] == cloneArray[0]);
++        System.out.println(intArray[1] == cloneArray[1]);
++    }
++}
+\ No newline at end of file
+Index: src/day8/Task31.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/day8/Task31.java b/src/day8/Task31.java
+new file mode 100644
+--- /dev/null	(date 1751895747583)
++++ b/src/day8/Task31.java	(date 1751895747583)
+@@ -0,0 +1,46 @@
++package day8;
++
++// Base class
++class Calculation {
++    int z;
++
++    public void addition(int x, int y) {
++        z = x + y;
++        System.out.println("Sum: " + z);
++    }
++
++    public void subtraction(int x, int y) {
++        z = x - y;
++        System.out.println("Difference: " + z);
++    }
++}
++
++// First level derived class
++class My_Calculation extends Calculation {
++    public void multiplication(int x, int y) {
++        z = x * y;
++        System.out.println("Product: " + z);
++    }
++}
++
++// Second level derived class (Multilevel Inheritance)
++public class Task31 extends My_Calculation {
++    public void division(int x, int y) {
++        if (y != 0) {
++            z = x / y;
++            System.out.println("Quotient: " + z);
++        } else {
++            System.out.println("Cannot divide by zero.");
++        }
++    }
++
++    public static void main(String[] args) {
++        Task31 obj = new Task31();
++        int a = 20, b = 10;
++
++        obj.addition(a, b);        // From Calculation
++        obj.subtraction(a, b);     // From Calculation
++        obj.multiplication(a, b);  // From My_Calculation
++        obj.division(a, b);        // From Task31
++    }
++}

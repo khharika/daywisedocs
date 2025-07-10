@@ -1,0 +1,935 @@
+Index: src/streams/TaskS10.java
+===================================================================
+diff --git a/src/streams/TaskS10.java b/src/Day11/streams/TaskS10.java
+rename from src/streams/TaskS10.java
+rename to src/Day11/streams/TaskS10.java
+--- a/src/streams/TaskS10.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS10.java	(date 1752121331155)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ public class TaskS10 {
+     public static void main(String[] args) {
+Index: src/streams/TaskS12.java
+===================================================================
+diff --git a/src/streams/TaskS12.java b/src/Day11/streams/TaskS12.java
+rename from src/streams/TaskS12.java
+rename to src/Day11/streams/TaskS12.java
+--- a/src/streams/TaskS12.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS12.java	(date 1752121331254)
+@@ -1,6 +1,5 @@
+-package streams;
++package Day11.streams;
+ import java.util.ArrayList;
+-
+ public class TaskS12 {
+     public static void main(String[] args) {
+         // Create an ArrayList of Strings
+Index: src/streams/TaskS15.java
+===================================================================
+diff --git a/src/streams/TaskS15.java b/src/Day11/streams/TaskS15.java
+rename from src/streams/TaskS15.java
+rename to src/Day11/streams/TaskS15.java
+--- a/src/streams/TaskS15.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS15.java	(date 1752121331286)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ import java.util.*;
+ import java.util.stream.Collectors;
+Index: src/streams/TaskS14.java
+===================================================================
+diff --git a/src/streams/TaskS14.java b/src/Day11/streams/TaskS14.java
+rename from src/streams/TaskS14.java
+rename to src/Day11/streams/TaskS14.java
+--- a/src/streams/TaskS14.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS14.java	(date 1752121331186)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+Index: src/streams/TaskS19.java
+===================================================================
+diff --git a/src/streams/TaskS19.java b/src/Day11/streams/TaskS19.java
+rename from src/streams/TaskS19.java
+rename to src/Day11/streams/TaskS19.java
+--- a/src/streams/TaskS19.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS19.java	(date 1752121331298)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ import java.util.stream.Stream;
+ 
+Index: src/streams/TaskS18.java
+===================================================================
+diff --git a/src/streams/TaskS18.java b/src/Day11/streams/TaskS18.java
+rename from src/streams/TaskS18.java
+rename to src/Day11/streams/TaskS18.java
+--- a/src/streams/TaskS18.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS18.java	(date 1752121331340)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ import java.util.stream.Stream;
+ 
+Index: src/Task20.java
+===================================================================
+diff --git a/src/Task20.java b/src/day9/Task20.java
+rename from src/Task20.java
+rename to src/day9/Task20.java
+--- a/src/Task20.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task20.java	(date 1751982843218)
+@@ -1,6 +1,6 @@
++package day9;
+ import java.util.*;
+ public class Task20 {
+-
+     public static void main(String[] args) {
+         // ArrayList
+         List a1 = new ArrayList();
+@@ -9,8 +9,6 @@
+         a1.add("Ayan");
+         System.out.println(" ArrayList Elements");
+         System.out.print("\t" + a1);
+-
+-        // LinkedList
+         List l1 = new LinkedList();
+         l1.add("Zara");
+         l1.add("Mahnaz");
+@@ -18,8 +16,6 @@
+         System.out.println();
+         System.out.println(" LinkedList Elements");
+         System.out.print("\t" + l1);
+-
+-        // HashSet
+         Set s1 = new HashSet();
+         s1.add("Zara");
+         s1.add("Mahnaz");
+@@ -27,8 +23,6 @@
+         System.out.println();
+         System.out.println(" Set Elements");
+         System.out.print("\t" + s1);
+-
+-        // HashMap
+         Map m1 = new HashMap();
+         m1.put("Zara", "8");
+         m1.put("Mahnaz", "31");
+Index: src/day10/TaskMT1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class RunnableDemo implements Runnable {\r\n    private Thread t;\r\n    private String threadName;\r\n    RunnableDemo( String name){  //constructor with 1 parameter\r\n        threadName = name;\r\n        System.out.println(\"Creating \" + threadName );\r\n    }\r\n    public void run() {\r\n        System.out.println(\"Running \" + threadName );\r\n        try {\r\n            for(int i = 4; i > 0; i--) {\r\n                System.out.println(\"Thread: \" + threadName + \", \" + i);\r\n// Let the thread sleep for a while.\r\n                Thread.sleep(5000);\r\n            }\r\n        } catch (InterruptedException e) {\r\n            System.out.println(\"Thread \" + threadName + \" interrupted.\");\r\n        }\r\n        System.out.println(\"Thread \" + threadName + \" exiting.\");\r\n\r\n    }\r\n    public void start ()\r\n    {\r\n        System.out.println(\"Starting \" + threadName );\r\n        if (t == null)\r\n        {\r\n            t = new Thread (this, threadName);\r\n            t.start ();\r\n        }\r\n    }\r\n}\r\npublic class TaskMT1 {\r\n    public static void main(String args[]) {\r\n        RunnableDemo R1 = new RunnableDemo( \"Thread-1\");\r\n        R1.start();\r\n        RunnableDemo R2 = new RunnableDemo( \"Thread-2\");\r\n        R2.start();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/day10/TaskMT1.java b/src/day10/TaskMT1.java
+--- a/src/day10/TaskMT1.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT1.java	(date 1752117150081)
+@@ -10,7 +10,6 @@
+         try {
+             for(int i = 4; i > 0; i--) {
+                 System.out.println("Thread: " + threadName + ", " + i);
+-// Let the thread sleep for a while.
+                 Thread.sleep(5000);
+             }
+         } catch (InterruptedException e) {
+Index: src/TaskMT5.java
+===================================================================
+diff --git a/src/TaskMT5.java b/src/day10/TaskMT5.java
+rename from src/TaskMT5.java
+rename to src/day10/TaskMT5.java
+--- a/src/TaskMT5.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT5.java	(date 1752115732368)
+@@ -1,3 +1,5 @@
++package day10;
++
+ class Counter {
+     private int count = 0;
+ 
+Index: src/TaskMT6.java
+===================================================================
+diff --git a/src/TaskMT6.java b/src/day10/TaskMT6.java
+rename from src/TaskMT6.java
+rename to src/day10/TaskMT6.java
+--- a/src/TaskMT6.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT6.java	(date 1752115732310)
+@@ -1,3 +1,5 @@
++package day10;
++
+ class SafeCounter {
+     private int count = 0;
+ 
+Index: src/TaskMT8.java
+===================================================================
+diff --git a/src/TaskMT8.java b/src/day10/TaskMT8.java
+rename from src/TaskMT8.java
+rename to src/day10/TaskMT8.java
+--- a/src/TaskMT8.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT8.java	(date 1752115732354)
+@@ -1,3 +1,5 @@
++package day10;
++
+ class Counter111 {
+     private static int count = 0;
+ 
+Index: src/TaskMT11.java
+===================================================================
+diff --git a/src/TaskMT11.java b/src/day10/TaskMT11.java
+rename from src/TaskMT11.java
+rename to src/day10/TaskMT11.java
+--- a/src/TaskMT11.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT11.java	(date 1752115732379)
+@@ -1,3 +1,5 @@
++package day10;
++
+ class Resource1 {
+     synchronized void method1(Resource1 r) {
+         System.out.println(Thread.currentThread().getName() + " is executing method1");
+Index: src/TaskMT12.java
+===================================================================
+diff --git a/src/TaskMT12.java b/src/day10/TaskMT12.java
+rename from src/TaskMT12.java
+rename to src/day10/TaskMT12.java
+--- a/src/TaskMT12.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day10/TaskMT12.java	(date 1752115732325)
+@@ -1,3 +1,5 @@
++package day10;
++
+ import java.util.stream.*;
+ class TaskMT12 {
+     public static void main(String[] args) {
+Index: src/greetings/Task01.java
+===================================================================
+diff --git a/src/greetings/Task01.java b/src/Day7/Task01.java
+rename from src/greetings/Task01.java
+rename to src/Day7/Task01.java
+--- a/src/greetings/Task01.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/Task01.java	(date 1751973380670)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class Task01 {
+     public static void main(String[] args) {
+Index: src/Filehandling/TaskFh5.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh5.java b/src/Day11/TaskFh5.java
+rename from src/Filehandling/TaskFh5.java
+rename to src/Day11/TaskFh5.java
+--- a/src/Filehandling/TaskFh5.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh5.java	(date 1752121331311)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ 
+ import java.io.*;
+ public class TaskFh5{
+Index: src/Filehandling/TaskFh7.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh7.java b/src/Day11/TaskFh7.java
+rename from src/Filehandling/TaskFh7.java
+rename to src/Day11/TaskFh7.java
+--- a/src/Filehandling/TaskFh7.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh7.java	(date 1752121331274)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ 
+ import java.io.*;
+ class TaskFh7
+Index: src/Filehandling/TaskFh8.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh8.java b/src/Day11/TaskFh8.java
+rename from src/Filehandling/TaskFh8.java
+rename to src/Day11/TaskFh8.java
+--- a/src/Filehandling/TaskFh8.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh8.java	(date 1752121331167)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ 
+ import java.io.*;
+ class TaskFh8
+Index: src/streams/TaskS1301.java
+===================================================================
+diff --git a/src/streams/TaskS1301.java b/src/Day11/streams/TaskS1301.java
+rename from src/streams/TaskS1301.java
+rename to src/Day11/streams/TaskS1301.java
+--- a/src/streams/TaskS1301.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS1301.java	(date 1752121331330)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+Index: src/streams/TaskS13.java
+===================================================================
+diff --git a/src/streams/TaskS13.java b/src/Day11/streams/TaskS13.java
+rename from src/streams/TaskS13.java
+rename to src/Day11/streams/TaskS13.java
+--- a/src/streams/TaskS13.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS13.java	(date 1752121331264)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ import java.util.*;
+ 
+ public class TaskS13 {
+Index: src/streams/TaskS17.java
+===================================================================
+diff --git a/src/streams/TaskS17.java b/src/Day11/streams/TaskS17.java
+rename from src/streams/TaskS17.java
+rename to src/Day11/streams/TaskS17.java
+--- a/src/streams/TaskS17.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS17.java	(date 1752121331321)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ 
+ import java.util.*;
+ import java.util.stream.Collectors;
+Index: src/streams/TaskS16.java
+===================================================================
+diff --git a/src/streams/TaskS16.java b/src/Day11/streams/TaskS16.java
+rename from src/streams/TaskS16.java
+rename to src/Day11/streams/TaskS16.java
+--- a/src/streams/TaskS16.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/streams/TaskS16.java	(date 1752121331208)
+@@ -1,4 +1,4 @@
+-package streams;
++package Day11.streams;
+ import java.util.*;
+ import java.util.stream.Collectors;
+ 
+Index: src/ds/DSTask7.java
+===================================================================
+diff --git a/src/ds/DSTask7.java b/src/Day12/DSTask7.java
+rename from src/ds/DSTask7.java
+rename to src/Day12/DSTask7.java
+--- a/src/ds/DSTask7.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask7.java	(date 1752121381746)
+@@ -1,4 +1,4 @@
+-package ds;
++package Day12;
+ 
+ import java.util.*;
+ 
+Index: src/ds/DSTask10.java
+===================================================================
+diff --git a/src/ds/DSTask10.java b/src/Day12/DSTask10.java
+rename from src/ds/DSTask10.java
+rename to src/Day12/DSTask10.java
+--- a/src/ds/DSTask10.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask10.java	(date 1752121381759)
+@@ -1,4 +1,4 @@
+-package ds;
++package Day12;
+ 
+ public class DSTask10 {
+     public static void main (String[] args) {
+Index: src/ds/DSTask8.java
+===================================================================
+diff --git a/src/ds/DSTask8.java b/src/Day12/DSTask8.java
+rename from src/ds/DSTask8.java
+rename to src/Day12/DSTask8.java
+--- a/src/ds/DSTask8.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask8.java	(date 1752121381802)
+@@ -1,4 +1,4 @@
+-package ds;
++package Day12;
+ 
+ import java.util.Scanner;
+ 
+Index: src/ds/DSTask12.java
+===================================================================
+diff --git a/src/ds/DSTask12.java b/src/Day12/DSTask12.java
+rename from src/ds/DSTask12.java
+rename to src/Day12/DSTask12.java
+--- a/src/ds/DSTask12.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask12.java	(date 1752121381780)
+@@ -1,4 +1,4 @@
+-package ds;
++package Day12;
+ 
+ import java.util.Hashtable;
+ import java.util.Map;
+Index: src/ds/DSTask13.java
+===================================================================
+diff --git a/src/ds/DSTask13.java b/src/Day12/DSTask13.java
+rename from src/ds/DSTask13.java
+rename to src/Day12/DSTask13.java
+--- a/src/ds/DSTask13.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask13.java	(date 1752121381792)
+@@ -1,7 +1,6 @@
+-package ds;
++package Day12;
+ 
+ import java.util.HashMap;
+-import java.util.Map;
+ 
+ public class DSTask13 {
+     public static void main(String[] args) {
+Index: src/ds/DSTask16.java
+===================================================================
+diff --git a/src/ds/DSTask16.java b/src/Day12/DSTask16.java
+rename from src/ds/DSTask16.java
+rename to src/Day12/DSTask16.java
+--- a/src/ds/DSTask16.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day12/DSTask16.java	(date 1752121381770)
+@@ -1,4 +1,4 @@
+-package ds;
++package Day12;
+ 
+ import java.util.Collections;
+ import java.util.HashMap;
+Index: src/LinkedList/LLTask7.java
+===================================================================
+diff --git a/src/LinkedList/LLTask7.java b/src/Day13/LLTask7.java
+rename from src/LinkedList/LLTask7.java
+rename to src/Day13/LLTask7.java
+--- a/src/LinkedList/LLTask7.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask7.java	(date 1752121475763)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ import java.util.LinkedList;
+ 
+ 
+Index: src/LinkedList/LLTask6.java
+===================================================================
+diff --git a/src/LinkedList/LLTask6.java b/src/Day13/LLTask6.java
+rename from src/LinkedList/LLTask6.java
+rename to src/Day13/LLTask6.java
+--- a/src/LinkedList/LLTask6.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask6.java	(date 1752121475813)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.LinkedList;
+ 
+Index: src/LinkedList/LLTask9.java
+===================================================================
+diff --git a/src/LinkedList/LLTask9.java b/src/Day13/LLTask9.java
+rename from src/LinkedList/LLTask9.java
+rename to src/Day13/LLTask9.java
+--- a/src/LinkedList/LLTask9.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask9.java	(date 1752121475859)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ import java.util.LinkedList;
+ 
+ public class LLTask9 {
+Index: src/LinkedList/LLTask8.java
+===================================================================
+diff --git a/src/LinkedList/LLTask8.java b/src/Day13/LLTask8.java
+rename from src/LinkedList/LLTask8.java
+rename to src/Day13/LLTask8.java
+--- a/src/LinkedList/LLTask8.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask8.java	(date 1752121475848)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.LinkedList;
+ 
+Index: src/LinkedList/LLTask11.java
+===================================================================
+diff --git a/src/LinkedList/LLTask11.java b/src/Day13/LLTask11.java
+rename from src/LinkedList/LLTask11.java
+rename to src/Day13/LLTask11.java
+--- a/src/LinkedList/LLTask11.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask11.java	(date 1752121475824)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.LinkedList;
+ import java.util.Arrays;
+Index: src/LinkedList/LLTask10.java
+===================================================================
+diff --git a/src/LinkedList/LLTask10.java b/src/Day13/LLTask10.java
+rename from src/LinkedList/LLTask10.java
+rename to src/Day13/LLTask10.java
+--- a/src/LinkedList/LLTask10.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask10.java	(date 1752121475903)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ 
+ import java.util.LinkedList;
+Index: src/LinkedList/LLTask13.java
+===================================================================
+diff --git a/src/LinkedList/LLTask13.java b/src/Day13/LLTask13.java
+rename from src/LinkedList/LLTask13.java
+rename to src/Day13/LLTask13.java
+--- a/src/LinkedList/LLTask13.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask13.java	(date 1752121475789)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ 
+ import java.util.LinkedList;
+Index: src/LinkedList/LLTask12.java
+===================================================================
+diff --git a/src/LinkedList/LLTask12.java b/src/Day13/LLTask12.java
+rename from src/LinkedList/LLTask12.java
+rename to src/Day13/LLTask12.java
+--- a/src/LinkedList/LLTask12.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask12.java	(date 1752121475778)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.LinkedList;
+ 
+Index: src/LinkedList/LLTask14.java
+===================================================================
+diff --git a/src/LinkedList/LLTask14.java b/src/Day13/LLTask14.java
+rename from src/LinkedList/LLTask14.java
+rename to src/Day13/LLTask14.java
+--- a/src/LinkedList/LLTask14.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask14.java	(date 1752121475835)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.*;
+ 
+Index: src/LinkedList/LLTask16.java
+===================================================================
+diff --git a/src/LinkedList/LLTask16.java b/src/Day13/LLTask16.java
+rename from src/LinkedList/LLTask16.java
+rename to src/Day13/LLTask16.java
+--- a/src/LinkedList/LLTask16.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask16.java	(date 1752121475918)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ public class LLTask16 {
+ 
+Index: src/LinkedList/LLTask15.java
+===================================================================
+diff --git a/src/LinkedList/LLTask15.java b/src/Day13/LLTask15.java
+rename from src/LinkedList/LLTask15.java
+rename to src/Day13/LLTask15.java
+--- a/src/LinkedList/LLTask15.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask15.java	(date 1752121475801)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.LinkedList;
+ import java.util.Spliterator;
+Index: src/LinkedList/LLTask18.java
+===================================================================
+diff --git a/src/LinkedList/LLTask18.java b/src/Day13/LLTask18.java
+rename from src/LinkedList/LLTask18.java
+rename to src/Day13/LLTask18.java
+--- a/src/LinkedList/LLTask18.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask18.java	(date 1752121475930)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.HashMap;
+ 
+Index: src/LinkedList/LLTask17.java
+===================================================================
+diff --git a/src/LinkedList/LLTask17.java b/src/Day13/LLTask17.java
+rename from src/LinkedList/LLTask17.java
+rename to src/Day13/LLTask17.java
+--- a/src/LinkedList/LLTask17.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask17.java	(date 1752121475872)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ import java.util.HashMap;
+ 
+Index: src/LinkedList/LLTask20.java
+===================================================================
+diff --git a/src/LinkedList/LLTask20.java b/src/Day13/LLTask20.java
+rename from src/LinkedList/LLTask20.java
+rename to src/Day13/LLTask20.java
+--- a/src/LinkedList/LLTask20.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day13/LLTask20.java	(date 1752121475888)
+@@ -1,4 +1,4 @@
+-package LinkedList;
++package Day13;
+ 
+ public class LLTask20 {
+ 
+Index: src/greetings/task02.java
+===================================================================
+diff --git a/src/greetings/task02.java b/src/Day7/task02.java
+rename from src/greetings/task02.java
+rename to src/Day7/task02.java
+--- a/src/greetings/task02.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task02.java	(date 1751973380570)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task02 {
+ 
+Index: src/greetings/task03.java
+===================================================================
+diff --git a/src/greetings/task03.java b/src/Day7/task03.java
+rename from src/greetings/task03.java
+rename to src/Day7/task03.java
+--- a/src/greetings/task03.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task03.java	(date 1751973380485)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ import java.util.Scanner;  // ✅ Import Scanner
+ 
+Index: src/greetings/task05.java
+===================================================================
+diff --git a/src/greetings/task05.java b/src/Day7/task05.java
+rename from src/greetings/task05.java
+rename to src/Day7/task05.java
+--- a/src/greetings/task05.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task05.java	(date 1751973380508)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task05 {
+     public static int add(int a, int b) {
+Index: src/greetings/task07.java
+===================================================================
+diff --git a/src/greetings/task07.java b/src/Day7/task07.java
+rename from src/greetings/task07.java
+rename to src/Day7/task07.java
+--- a/src/greetings/task07.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task07.java	(date 1751973380626)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ import java.util.Scanner;
+ 
+Index: src/greetings/task06.java
+===================================================================
+diff --git a/src/greetings/task06.java b/src/Day7/task06.java
+rename from src/greetings/task06.java
+rename to src/Day7/task06.java
+--- a/src/greetings/task06.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task06.java	(date 1751973380800)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task06 {
+         public static void main(String[] args) {
+Index: src/greetings/task11.java
+===================================================================
+diff --git a/src/greetings/task11.java b/src/Day7/task11.java
+rename from src/greetings/task11.java
+rename to src/Day7/task11.java
+--- a/src/greetings/task11.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task11.java	(date 1751973380524)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ import java.util.Scanner;
+ 
+Index: src/greetings/task13.java
+===================================================================
+diff --git a/src/greetings/task13.java b/src/Day7/task13.java
+rename from src/greetings/task13.java
+rename to src/Day7/task13.java
+--- a/src/greetings/task13.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task13.java	(date 1751973380582)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task13 {
+     public static void main(String[] args) {
+Index: src/greetings/task14.java
+===================================================================
+diff --git a/src/greetings/task14.java b/src/Day7/task14.java
+rename from src/greetings/task14.java
+rename to src/Day7/task14.java
+--- a/src/greetings/task14.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task14.java	(date 1751973380815)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task14 {
+ 
+Index: src/greetings/task15.java
+===================================================================
+diff --git a/src/greetings/task15.java b/src/Day7/task15.java
+rename from src/greetings/task15.java
+rename to src/Day7/task15.java
+--- a/src/greetings/task15.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day7/task15.java	(date 1751973380684)
+@@ -1,4 +1,4 @@
+-package greetings;
++package Day7;
+ 
+ public class task15 {
+ 
+Index: src/exceptions/Task3.java
+===================================================================
+diff --git a/src/exceptions/Task3.java b/src/day9/Task3.java
+rename from src/exceptions/Task3.java
+rename to src/day9/Task3.java
+--- a/src/exceptions/Task3.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task3.java	(date 1751980117448)
+@@ -1,34 +1,12 @@
+-
+ public class Task3 {
+-
+-
+     public static void main(String[] args) {
+         int[] myNumbers = {1, 2, 3};
+-
+-
+         try {
+-
+-
+-
+             System.out.println(myNumbers[10]);
+-
+-
+         } catch (Exception e) {
+-
+-
+             System.out.println("Something went wrong."+ myNumbers[1]);
+-
+-
+         } finally {
+-
+-
+             System.out.println("I'm from finally block.");
+-
+-
+         }
+-
+-
+     }
+-
+-
+ }
+Index: src/exceptions/Task6.java
+===================================================================
+diff --git a/src/exceptions/Task6.java b/src/day9/Task6.java
+rename from src/exceptions/Task6.java
+rename to src/day9/Task6.java
+--- a/src/exceptions/Task6.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task6.java	(date 1751980773721)
+@@ -1,5 +1,4 @@
+ public class Task6 {
+-
+     public static void main(String args[]) {
+         try {
+             int a[] = new int[2];
+Index: src/Task14.java
+===================================================================
+diff --git a/src/Task14.java b/src/day9/Task14.java
+rename from src/Task14.java
+rename to src/day9/Task14.java
+--- a/src/Task14.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task14.java	(date 1751981894032)
+@@ -1,3 +1,5 @@
++package day9;
++
+ class OuterClass14 {
+     int x = 50;
+ 
+Index: src/Task13.java
+===================================================================
+diff --git a/src/Task13.java b/src/day9/Task13.java
+rename from src/Task13.java
+rename to src/day9/Task13.java
+--- a/src/Task13.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task13.java	(date 1751981894066)
+@@ -1,3 +1,5 @@
++package day9;
++
+ class OuterClass13 {
+ 
+     int x = 10;
+Index: src/Task15.java
+===================================================================
+diff --git a/src/Task15.java b/src/day9/Task15.java
+rename from src/Task15.java
+rename to src/day9/Task15.java
+--- a/src/Task15.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task15.java	(date 1751981894055)
+@@ -1,3 +1,5 @@
++package day9;
++
+ class OuterClass {
+     int x = 10;
+     static class InnerClass {
+Index: src/Task18.java
+===================================================================
+diff --git a/src/Task18.java b/src/day9/Task18.java
+rename from src/Task18.java
+rename to src/day9/Task18.java
+--- a/src/Task18.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/day9/Task18.java	(date 1751982434410)
+@@ -1,42 +1,43 @@
++package day9;
+ import java.util.ArrayList;
+ import java.util.Iterator;
+ import java.util.List;
+ import java.util.function.Consumer;
+-import java.lang.Integer;
+ 
+ public class Task18 {
+-
+     public static void main(String[] args) {
++        List<Integer> myList = new ArrayList<>();
+ 
+-        List<Integer> myList = new ArrayList<Integer>();
+-        for(int i=0; i<10; i++) myList.add(i);
++        for (int i = 0; i < 10; i++) {
++            myList.add(i);
++        }
+ 
++        // 1. Using Iterator
+         Iterator<Integer> it = myList.iterator();
+-        while(it.hasNext()){
++        while (it.hasNext()) {
+             Integer i = it.next();
+-            System.out.println("Iterator Value::"+i);
++            System.out.println("Iterator Value:: " + i);
+         }
+ 
++        // 2. Using forEach with Anonymous Class
+         myList.forEach(new Consumer<Integer>() {
+-
+             public void accept(Integer t) {
+-                System.out.println("forEach anonymous class Value::"+t);
++                System.out.println("forEach anonymous class Value:: " + t);
+             }
+-
+         });
+ 
+-        //traversing with Consumer interface implementation
++        // 3. Using forEach with Named Consumer Class
+         MyConsumer action = new MyConsumer();
+         myList.forEach(action);
+ 
++        // 4. Using forEach with Lambda Expression (Java 8+)
++        myList.forEach(t -> System.out.println("Lambda Expression Value:: " + t));
+     }
+-
+ }
+ 
+-//Consumer implementation that can be reused
++// Custom Consumer class
+ class MyConsumer implements Consumer<Integer> {
+-
+     public void accept(Integer t) {
+-        System.out.println("Consumer impl Value::" + t);
++        System.out.println("Consumer impl Value:: " + t);
+     }
+-}
+\ No newline at end of file
++}
+Index: src/Filehandling/TaskFh1.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh1.java b/src/Day11/TaskFh1.java
+rename from src/Filehandling/TaskFh1.java
+rename to src/Day11/TaskFh1.java
+--- a/src/Filehandling/TaskFh1.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh1.java	(date 1752121331140)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ import java.io.File;
+ import java.io.FileOutputStream;
+ import java.io.IOException;
+Index: src/Filehandling/TaskFh2.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh2.java b/src/Day11/TaskFh2.java
+rename from src/Filehandling/TaskFh2.java
+rename to src/Day11/TaskFh2.java
+--- a/src/Filehandling/TaskFh2.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh2.java	(date 1752121331239)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ 
+ import java.io.*;
+ public class TaskFh2
+Index: src/Filehandling/TaskFh6.java
+===================================================================
+diff --git a/src/Filehandling/TaskFh6.java b/src/Day11/TaskFh6.java
+rename from src/Filehandling/TaskFh6.java
+rename to src/Day11/TaskFh6.java
+--- a/src/Filehandling/TaskFh6.java	(revision c9e4b053e766748e324a0b0acb18294ba9f4bf23)
++++ b/src/Day11/TaskFh6.java	(date 1752121331221)
+@@ -1,4 +1,4 @@
+-package Filehandling;
++package Day11;
+ 
+ import java.io.*;
+ public class TaskFh6{
+diff --git a/src/LinkedList/LLTask4.java b/src/Day13/LLTask4.java
+rename from src/LinkedList/LLTask4.java
+rename to src/Day13/LLTask4.java
+diff --git a/src/LinkedList/LLTask19.java b/src/Day13/LLTask19.java
+rename from src/LinkedList/LLTask19.java
+rename to src/Day13/LLTask19.java
+diff --git a/src/greetings/task04.java b/src/Day7/task04.java
+rename from src/greetings/task04.java
+rename to src/Day7/task04.java
+diff --git a/src/greetings/task09.java b/src/Day7/task09.java
+rename from src/greetings/task09.java
+rename to src/Day7/task09.java
+diff --git a/src/greetings/task08.java b/src/Day7/task08.java
+rename from src/greetings/task08.java
+rename to src/Day7/task08.java
+diff --git a/src/greetings/task10.java b/src/Day7/task10.java
+rename from src/greetings/task10.java
+rename to src/Day7/task10.java
+diff --git a/src/greetings/task12.java b/src/Day7/task12.java
+rename from src/greetings/task12.java
+rename to src/Day7/task12.java
+diff --git a/src/exceptions/Task2.java b/src/day9/Task2.java
+rename from src/exceptions/Task2.java
+rename to src/day9/Task2.java
+diff --git a/src/exceptions/Task1.java b/src/day9/Task1.java
+rename from src/exceptions/Task1.java
+rename to src/day9/Task1.java
+diff --git a/src/exceptions/Task7.java b/src/day9/Task7.java
+rename from src/exceptions/Task7.java
+rename to src/day9/Task7.java
+diff --git a/src/exceptions/Task9.java b/src/day9/Task9.java
+rename from src/exceptions/Task9.java
+rename to src/day9/Task9.java
+diff --git a/src/exceptions/Task10.java b/src/day9/Task10.java
+rename from src/exceptions/Task10.java
+rename to src/day9/Task10.java
+diff --git a/src/exceptions/Task12.java b/src/day9/Task12.java
+rename from src/exceptions/Task12.java
+rename to src/day9/Task12.java
+diff --git a/src/exceptions/Task11.java b/src/day9/Task11.java
+rename from src/exceptions/Task11.java
+rename to src/day9/Task11.java
+diff --git a/src/Filehandling/TaskFh3.java b/src/Day11/TaskFh3.java
+rename from src/Filehandling/TaskFh3.java
+rename to src/Day11/TaskFh3.java
+diff --git a/src/Filehandling/TaskFh4.java b/src/Day11/TaskFh4.java
+rename from src/Filehandling/TaskFh4.java
+rename to src/Day11/TaskFh4.java
