@@ -1,5 +1,6 @@
 package Day24;
-public class Apple {
+public class
+Apple {
     private Apple() {
         // private constructor to prevent instantiation
     }
