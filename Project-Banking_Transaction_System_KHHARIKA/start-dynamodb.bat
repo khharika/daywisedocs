@@ -1,3 +1,0 @@
-@echo off
-echo Starting DynamoDB Local on port 8000...
-java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
