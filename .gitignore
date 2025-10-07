@@ -1,0 +1,33 @@
+# Exclude XML files
+*.xml
+pom.xml
+logback.xml
+
+# Exclude documentation
+*.md
+README.md
+SETUP.md
+
+# Exclude batch files
+*.bat
+
+# Exclude logs
+logs/
+*.log
+
+# Exclude IDE files
+.idea/
+*.iml
+.vscode/
+
+# Exclude build files
+target/
+build/
+out/
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude Maven wrapper
+.mvn/
